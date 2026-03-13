@@ -1,4 +1,3 @@
-
 import logging
 import os
 from dotenv import load_dotenv
@@ -22,7 +21,9 @@ app = FastAPI(
     version="1.0.0"
 )
 
-# CORS Middleware
+# ----------------------------
+# CORS
+# ----------------------------
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  # change in production
@@ -31,26 +32,40 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Include API routes
+# ----------------------------
+# API ROUTES
+# ----------------------------
 app.include_router(api_router, prefix="/api/v1")
 
-# Frontend directory
-FRONTEND_DIR = os.path.join(os.getcwd(), "frontend")
+# ----------------------------
+# FRONTEND PATH
+# ----------------------------
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+FRONTEND_DIR = os.path.join(BASE_DIR, "frontend")
 
-# Serve static files (css, js, images)
+# ----------------------------
+# SERVE FRONTEND
+# ----------------------------
 if os.path.exists(FRONTEND_DIR):
-    app.mount("/static", StaticFiles(directory=FRONTEND_DIR), name="static")
 
-# Root endpoint -> serve index.html
-@app.get("/")
-async def serve_frontend():
-    index_path = os.path.join(FRONTEND_DIR, "index.html")
-    if os.path.exists(index_path):
-        return FileResponse(index_path)
-    return {"message": "CarbonSphere frontend not found"}
+    # Serve JS, CSS, images
+    app.mount("/frontend", StaticFiles(directory=FRONTEND_DIR), name="frontend")
 
-# Health check
+    # Root route -> index.html
+    @app.get("/")
+    async def serve_index():
+        return FileResponse(os.path.join(FRONTEND_DIR, "index.html"))
+
+else:
+
+    @app.get("/")
+    async def root():
+        return {"message": "Frontend not found"}
+
+
+# ----------------------------
+# HEALTH CHECK
+# ----------------------------
 @app.get("/health")
 async def health_check():
     return {"status": "ok", "service": "CarbonSphere Backend"}
-
