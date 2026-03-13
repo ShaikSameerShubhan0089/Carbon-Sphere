@@ -1,4 +1,4 @@
-```python
+
 import logging
 import os
 from dotenv import load_dotenv
@@ -53,4 +53,4 @@ async def serve_frontend():
 @app.get("/health")
 async def health_check():
     return {"status": "ok", "service": "CarbonSphere Backend"}
-```
+
