@@ -1,14 +1,20 @@
-# Use official Python runtime as a parent image
+# ---------- FRONTEND BUILD ----------
+FROM node:20 AS frontend-build
+
+WORKDIR /frontend
+COPY frontend/package*.json ./
+RUN npm install
+COPY frontend .
+RUN npm run build
+
+# ---------- BACKEND ----------
 FROM python:3.10-slim
 
-# Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
 
-# Set work directory
 WORKDIR /app
 
-# Install system dependencies (needed for OpenCV and Geo tools)
 RUN apt-get update && apt-get install -y \
     build-essential \
     curl \
@@ -16,15 +22,14 @@ RUN apt-get update && apt-get install -y \
     libglib2.0-0 \
     && rm -rf /var/lib/apt/lists/*
 
-# Install Python dependencies
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy project
-COPY . .
+COPY backend ./backend
 
-# Expose port
+# Copy frontend build into backend static folder
+COPY --from=frontend-build /frontend/dist ./frontend
+
 EXPOSE 8000
 
-# Command to run the application
 CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000"]
