@@ -58,6 +58,17 @@ body {
     text-align: center;
 }
 
+.logo-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.logo-link:hover .logo {
+    transform: translateY(-2px);
+}
+
 .logo-icon {
     margin-bottom: 0.8rem;
     display: flex;

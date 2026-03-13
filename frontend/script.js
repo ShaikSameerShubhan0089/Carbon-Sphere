@@ -524,6 +524,8 @@ function saveSettings() {
 }
 
 // Add Event Listeners
+const logoLink = document.getElementById('logo-link');
+if (logoLink) logoLink.addEventListener('click', (e) => { e.preventDefault(); switchView('dashboard'); });
 if (navLinks.dashboard) navLinks.dashboard.addEventListener('click', () => switchView('dashboard'));
 if (navLinks.satellite) navLinks.satellite.addEventListener('click', () => switchView('satellite'));
 if (navLinks.settings) navLinks.settings.addEventListener('click', () => switchView('settings'));
