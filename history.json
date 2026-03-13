@@ -1,0 +1,133 @@
+[
+    {
+        "latitude": 13.6355,
+        "longitude": 79.4236,
+        "timestamp": "2025-10-24T10:00:00",
+        "carbon_analysis": {
+            "carbon_credits": 15230.5,
+            "confidence_score": 0.88
+        },
+        "ai_metrics": {
+            "tree_cover_ratio": 0.75,
+            "segmentation_method": "ResNet50 (Sample)"
+        }
+    },
+    {
+        "latitude": 13.6355,
+        "longitude": 79.4236,
+        "timestamp": "2025-11-15T14:30:00",
+        "carbon_analysis": {
+            "carbon_credits": 16800.2,
+            "confidence_score": 0.91
+        },
+        "ai_metrics": {
+            "tree_cover_ratio": 0.82,
+            "segmentation_method": "U-Net (Sample)"
+        }
+    },
+    {
+        "latitude": 13.6355,
+        "longitude": 79.4236,
+        "timestamp": "2025-12-05T09:15:00",
+        "carbon_analysis": {
+            "carbon_credits": 14900.8,
+            "confidence_score": 0.85
+        },
+        "ai_metrics": {
+            "tree_cover_ratio": 0.71,
+            "segmentation_method": "HSV (Sample)"
+        }
+    },
+    {
+        "latitude": 13.6355,
+        "longitude": 79.4236,
+        "timestamp": "2026-01-20T11:45:00",
+        "carbon_analysis": {
+            "carbon_credits": 18500.0,
+            "confidence_score": 0.94
+        },
+        "ai_metrics": {
+            "tree_cover_ratio": 0.89,
+            "segmentation_method": "U-Net (Sample)"
+        }
+    },
+    {
+        "latitude": 13.6355,
+        "longitude": 79.4236,
+        "timestamp": "2026-02-13T05:50:39.259435",
+        "carbon_analysis": {
+            "carbon_credits": 17250.4,
+            "confidence_score": 0.92
+        },
+        "ai_metrics": {
+            "tree_cover_ratio": 0.84,
+            "segmentation_method": "DeepLabV3 (Real)"
+        }
+    },
+    {
+        "latitude": 13.6355,
+        "longitude": 79.4236,
+        "timestamp": "2026-03-06T17:06:26.058984",
+        "satellite_metrics": {
+            "ndvi_mean": 0.7150275576787073,
+            "satellite_source": "MOCK_DATA",
+            "status": "mocked"
+        },
+        "ai_metrics": {
+            "tree_cover_ratio": 0.9170533984844654,
+            "segmentation_method": "HSV_Tuned (Sens=100)"
+        },
+        "carbon_analysis": {
+            "biomass_tons": 30900.0,
+            "carbon_stock_tons": 15450.0,
+            "co2_tons": 56701.51,
+            "carbon_credits": 56701.51,
+            "confidence_score": 0.85
+        },
+        "status": "success"
+    },
+    {
+        "latitude": 13.6355,
+        "longitude": 79.4236,
+        "timestamp": "2026-03-06T17:06:30.503431",
+        "satellite_metrics": {
+            "ndvi_mean": 0.6820911777028376,
+            "satellite_source": "MOCK_DATA",
+            "status": "mocked"
+        },
+        "ai_metrics": {
+            "tree_cover_ratio": 0.9170533984844654,
+            "segmentation_method": "HSV_Tuned (Sens=100)"
+        },
+        "carbon_analysis": {
+            "biomass_tons": 29476.65,
+            "carbon_stock_tons": 14738.33,
+            "co2_tons": 54089.66,
+            "carbon_credits": 54089.66,
+            "confidence_score": 0.85
+        },
+        "status": "success"
+    },
+    {
+        "latitude": 13.6355,
+        "longitude": 79.4236,
+        "timestamp": "2026-03-06T17:06:35.300222",
+        "satellite_metrics": {
+            "ndvi_mean": 0.6790733800282918,
+            "satellite_source": "MOCK_DATA",
+            "status": "mocked"
+        },
+        "ai_metrics": {
+            "tree_cover_ratio": 0.9170533984844654,
+            "segmentation_method": "HSV_Tuned (Sens=100)"
+        },
+        "carbon_analysis": {
+            "biomass_tons": 29346.24,
+            "carbon_stock_tons": 14673.12,
+            "co2_tons": 53850.35,
+            "carbon_credits": 53850.35,
+            "confidence_score": 0.85
+        },
+        "status": "success"
+    }
+]

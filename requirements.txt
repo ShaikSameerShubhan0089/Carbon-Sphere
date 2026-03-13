@@ -1,0 +1,20 @@
+fastapi>=0.109.0
+uvicorn>=0.27.0
+numpy>=1.26.0
+pandas>=2.2.0
+pillow>=10.2.0
+python-multipart>=0.0.7
+pymongo>=4.6.1
+requests>=2.31.0
+python-dotenv>=1.0.1
+aiofiles>=23.2.1
+
+# HEAVY/OPTIONAL DEPS (Commented out for easy Windows Local Run)
+# Uncomment these if you have enabled Long Paths and installed build tools
+# earthengine-api>=0.1.389
+# shapely>=2.0.2
+# geopandas>=0.14.3
+# opencv-python-headless>=4.9.0
+# torch>=2.2.0
+# torchvision>=0.17.0
+# scikit-learn>=1.4.0

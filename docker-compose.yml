@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    container_name: carbonsphere_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - MONGODB_URL=${MONGODB_URL}
+      - GOOGLE_APPLICATION_CREDENTIALS=/app/credentials.json
+    restart: unless-stopped
+
+  frontend:
+    image: nginx:alpine
+    container_name: carbonsphere_frontend
+    ports:
+      - "3000:80"
+    volumes:
+      - ./frontend:/usr/share/nginx/html
+    restart: unless-stopped

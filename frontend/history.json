@@ -1,0 +1,26 @@
+[
+    {
+        "latitude": 13.6355,
+        "longitude": 79.4236,
+        "timestamp": "2026-02-13T03:19:36.820070",
+        "satellite_metrics": {
+            "ndvi_mean": 0.6644588641428759,
+            "satellite_source": "MOCK_DATA",
+            "status": "mocked"
+        },
+        "ai_metrics": {
+            "tree_cover_ratio": 0.7888581466842336,
+            "segmentation_method": "U-Net (Fallback to HSV)",
+            "confidence": 0.5,
+            "note": "Deep Learning found no distinct objects."
+        },
+        "carbon_analysis": {
+            "biomass_tons": 24700.64,
+            "carbon_stock_tons": 12350.32,
+            "co2_tons": 45325.67,
+            "carbon_credits": 45325.67,
+            "confidence_score": 0.85
+        },
+        "status": "success"
+    }
+]
