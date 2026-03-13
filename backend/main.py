@@ -47,17 +47,9 @@ FRONTEND_DIR = os.path.join(BASE_DIR, "frontend")
 # SERVE FRONTEND
 # ----------------------------
 if os.path.exists(FRONTEND_DIR):
-
-    # Serve JS, CSS, images
-    app.mount("/frontend", StaticFiles(directory=FRONTEND_DIR), name="frontend")
-
-    # Root route -> index.html
-    @app.get("/")
-    async def serve_index():
-        return FileResponse(os.path.join(FRONTEND_DIR, "index.html"))
-
+    # Serve JS, CSS, images, and root index
+    app.mount("/", StaticFiles(directory=FRONTEND_DIR, html=True), name="frontend")
 else:
-
     @app.get("/")
     async def root():
         return {"message": "Frontend not found"}
