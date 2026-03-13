@@ -1,13 +1,3 @@
-# ---------- FRONTEND BUILD ----------
-FROM node:20 AS frontend-build
-
-WORKDIR /frontend
-COPY frontend/package*.json ./
-RUN npm install
-COPY frontend .
-RUN npm run build
-
-# ---------- BACKEND ----------
 FROM python:3.10-slim
 
 ENV PYTHONDONTWRITEBYTECODE=1
@@ -25,10 +15,7 @@ RUN apt-get update && apt-get install -y \
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY backend ./backend
-
-# Copy frontend build into backend static folder
-COPY --from=frontend-build /frontend/dist ./frontend
+COPY . .
 
 EXPOSE 8000
 
